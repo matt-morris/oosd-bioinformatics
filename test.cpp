@@ -10,6 +10,7 @@ using namespace std;
 
 int main ( )
 {
-	cout << "Herro, prease.";
+	string foo = "Herro, prease.";
+	cout << foo;
 	return 0;
 }
