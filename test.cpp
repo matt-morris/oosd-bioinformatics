@@ -13,19 +13,19 @@ using namespace std;
 
 int dynamic(vector<char> first, vector<char> second, int match, int mismatch, int gap)
 {
-	unsigned int i, j = 0;
+	unsigned int i, j;
 	int table[first.size( )][second.size( )];
 
-	for (i = 0; i < first.size( ); i++)
+	table[0][0] = 0;
+
+	for (i = 1; i < first.size( ); i++)
 	{
 		table[i][0] = i * gap;
-		cout << "table[" << i << "][0]: " << table[i][0] << endl;
 	}
 
-	for (i = 1; i < second.size( ); i++)
+	for (j = 1; j < second.size( ); j++)
 	{
-		table[0][i] = i * gap;
-		//cout << "table[" << i << "][0]: " << table[i][0] << endl;
+		table[0][j] = j * gap;
 	}
 
 	for (i = 1; i < first.size( ); i++)
@@ -40,7 +40,6 @@ int dynamic(vector<char> first, vector<char> second, int match, int mismatch, in
 					max(table[i][j - 1], table[i - 1][j]) + gap
 				)
 			);
-			//cout << "table[" << i << "][" << j << "]: " << table[i][j] << endl;
 		}
 	}
 
