@@ -11,7 +11,12 @@ using namespace std;
 
 //static char GAP = '-';
 
-int dynamic(vector<char> first, vector<char> second, int match, int mismatch, int gap)
+int penalty(int open, int length, int extension)
+{
+	return open + ((length - 1) * extension);
+}
+
+int dynamic(vector<char> first, vector<char> second, int match, int mismatch, int open, int extension, int (*gap)(int, int, int))
 {
 	unsigned int i, j;
 	int table[first.size( )][second.size( )];
@@ -20,12 +25,12 @@ int dynamic(vector<char> first, vector<char> second, int match, int mismatch, in
 
 	for (i = 1; i < first.size( ); i++)
 	{
-		table[i][0] = i * gap;
+		table[i][0] = i * gap(open, 1, extension);
 	}
 
 	for (j = 1; j < second.size( ); j++)
 	{
-		table[0][j] = j * gap;
+		table[0][j] = j * gap(open, 1, extension);
 	}
 
 	for (i = 1; i < first.size( ); i++)
@@ -37,7 +42,7 @@ int dynamic(vector<char> first, vector<char> second, int match, int mismatch, in
 				max
 				(
 					table[i - 1][j - 1] + (first.at(i - 1) == second.at(j - 1) ? match : mismatch),
-					max(table[i][j - 1], table[i - 1][j]) + gap
+					max(table[i][j - 1], table[i - 1][j]) + gap(open, 1, extension)
 				)
 			);
 		}
@@ -46,9 +51,9 @@ int dynamic(vector<char> first, vector<char> second, int match, int mismatch, in
 	return table[i - 1][j - 1];
 }
 
-int align(vector<char> first, vector<char> second, int (*eval)(vector<char>, vector<char>, int, int, int) = dynamic, int match = 1, int mismatch = 0, int gap = -6)
+int align(vector<char> first, vector<char> second, int (*eval)(vector<char>, vector<char>, int, int, int, int, int (*)(int, int, int)) = dynamic, int match = 1, int mismatch = 0, int open = -6, int extension = 0, int (*gap)(int, int, int) = penalty)
 {
-	return eval(first, second, match, mismatch, gap);
+	return eval(first, second, match, mismatch, open, extension, gap);
 }
 
 int main ( )
