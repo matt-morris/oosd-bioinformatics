@@ -56,7 +56,7 @@ int align(vector<char> first, vector<char> second, int (*eval)(vector<char>, vec
 	return eval(first, second, match, mismatch, open, extension, gap);
 }
 
-int main ( )
+int main( )
 {
 	char one[ ] = "HEAGAWGHEE", two[ ] = "PAWHEAE";
 	vector<char> first(one, one + sizeof(one) / sizeof(char)), second(two, two + sizeof(two) / sizeof(char));
