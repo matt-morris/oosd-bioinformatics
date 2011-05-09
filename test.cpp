@@ -9,7 +9,7 @@
 #include <vector>
 using namespace std;
 
-static char GAP = '-';
+//static char GAP = '-';
 
 int penalty(int open, int length, int extension)
 {
@@ -76,7 +76,7 @@ int dynamic(vector<char> first, vector<char> second, int match, int mismatch, in
 		bottom.insert(bottom.begin( ), (l == 0 ? GAP : second.at(i)));
 		if (i > 1) i -= k;
 		if (j > 1) j -= l;
-	}*/
+	}
 	for (int z = 1; z < (first.size( ) - 1) + (second.size( ) - 1); z++)//i = 0; i < top.size( ); i++)
 	{
 		//cout << top.at(i);
@@ -89,7 +89,7 @@ int dynamic(vector<char> first, vector<char> second, int match, int mismatch, in
 		cout << vertical[i];
 
 	}
-	cout << endl;
+	cout << endl;*/
 
 	return table[first.size( ) - 1][second.size( ) - 1];
 }
@@ -99,9 +99,9 @@ int align(vector<char> first, vector<char> second, int (*eval)(vector<char>, vec
 	return eval(first, second, match, mismatch, open, extension, gap);
 }
 
-int main( )
+int main1( )
 {
-	char one[ ] = "AGACTAGTTAC", two[ ] = "CGAGACGT";
+	char one[ ] = "AGTATCGTAGCTGATCGTAGTAGC", two[ ] = "ATGACTAGTCGTCGATGCTACAC";//"AGACTAGTTAC", two[ ] = "CGAGACGT";
 	vector<char> first(one, one + sizeof(one) / sizeof(char)), second(two, two + sizeof(two) / sizeof(char));
 	cout << align(first, second) << endl;
 	return 0;

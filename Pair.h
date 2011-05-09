@@ -14,24 +14,28 @@ using namespace std;
 
 class Pair
 {
-public:
-	Pair();
-	virtual ~Pair();
+	public:
+		Pair( );
+		virtual ~Pair( );
 
-	string getA();
-	string getB();
-	int getScore();
+		string getA( );
+		string getB( );
+		int getMatches( );
+		int getScore( );
+		void printReport( );
 
-	void insertA(char a);
-	void insertB(char b);
+		void insertA(char a);
+		void insertB(char b);
 
-	void setScore(int x);
+		void setMatches(int);
+		void setScore(int x);
 
-private:
-	string SequenceA;
-	string SequenceB;
+	private:
+		string SequenceA;
+		string SequenceB;
 
-	int score;
+		int matches;
+		int score;
 };
 
 #endif /* PAIR_H_ */
