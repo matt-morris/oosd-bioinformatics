@@ -2,7 +2,7 @@
  * Needleman_Wunsch.h
  *
  *  Created on: May 3, 2011
- *      Author: doubleemms
+ *     Authors: Griffin DeJohn and Matt Morris
  */
 
 #ifndef NEEDLEMAN_WUNSCH_H_

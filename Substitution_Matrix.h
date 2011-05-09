@@ -2,7 +2,7 @@
  * Substitution_Matrix.h
  *
  *  Created on: May 3, 2011
- *      Author: doubleemms
+ *      Author: Matt Morris
  */
 
 #ifndef SUBSTITUTION_MATRIX_H_

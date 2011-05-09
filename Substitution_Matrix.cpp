@@ -2,7 +2,7 @@
  * Substitution_Matrix.cpp
  *
  *  Created on: May 3, 2011
- *      Author: doubleemms
+ *      Author: Matt Morris
  */
 
 #include "Substitution_Matrix.h"
@@ -31,7 +31,7 @@ Substitution_Matrix::Substitution_Matrix(char orderIn[4], int matrixIn[4][4])// 
 
 int Substitution_Matrix::getScore(char a, char b)
 {
-	int score;
+	int score = 0;
 	for (unsigned int i = 0;i < 4;i++)
 	{
 		if (order[i] == a)

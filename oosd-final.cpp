@@ -1,6 +1,6 @@
 //============================================================================
 // Name        : oosd-final.cpp
-// Author      : 
+// Authors     : Griffin DeJohn and Matt Morris
 // Version     :
 // Copyright   :
 // Description :
@@ -80,9 +80,10 @@ int main( ) {
 	}
 	file.close( );
 
-	Needleman_Wunsch *needleman = new Needleman_Wunsch(first, second, penalty, sub);
+	Pair *output;
 
-	Pair *output = needleman->align( );
+	Needleman_Wunsch *needleman = new Needleman_Wunsch(first, second, penalty, sub);
+	output = needleman->align( );
 	cout << "Needleman-Wunsch" << endl;
 	output->printReport( );
 

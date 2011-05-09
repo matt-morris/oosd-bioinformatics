@@ -2,7 +2,7 @@
  * Smith_Waterman.h
  *
  *  Created on: May 3, 2011
- *      Author: doubleemms
+ *      Author: Matt Morris
  */
 
 #ifndef SMITH_WATERMAN_H_

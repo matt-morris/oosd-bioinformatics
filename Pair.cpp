@@ -2,7 +2,7 @@
  * Pair.cpp
  *
  *  Created on: May 3, 2011
- *      Author: doubleemms
+ *     Authors: Griffin DeJohn and Matt Morris
  */
 
 #include "Pair.h"

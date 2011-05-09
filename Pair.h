@@ -2,7 +2,7 @@
  * Pair.h
  *
  *  Created on: May 3, 2011
- *      Author: doubleemms
+ *     Authors: Griffin DeJohn and Matt Morris
  */
 
 #ifndef PAIR_H_
