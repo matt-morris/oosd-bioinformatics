@@ -8,27 +8,28 @@
 #ifndef SMITH_WATERMAN_H_
 #define SMITH_WATERMAN_H_
 
-#include <vector>
+#include "Pair.h"
+#include "Sequence.h"
+#include "Substitution_Matrix.h"
+
 #include <iostream>
 #include <string>
-#include "Substitution_Matrix.h"
-//#include "Needleman_Wunsch.h"
-#include "Pair.h"
+#include <vector>
 
 using namespace std;
 
-class Smith_Waterman //: public Needleman_Wunsch
+class Smith_Waterman
 {
 public:
-	Smith_Waterman(vector<char> *firstIn, vector<char> *secondIn, int penaltyIn, Substitution_Matrix *subIn);
+	Smith_Waterman(Sequence *firstIn, Sequence *secondIn, int penaltyIn, Substitution_Matrix *subIn);
 	virtual ~Smith_Waterman();
 
 	Pair *align();
 
 private:
 	Substitution_Matrix *sub;
-	vector<char> *first;
-	vector<char> *second;
+	string first;
+	string second;
 	int penalty;
 };
 

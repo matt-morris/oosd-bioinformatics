@@ -9,6 +9,7 @@
 #define PAIR_H_
 
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -22,7 +23,7 @@ class Pair
 		string getB( );
 		int getMatches( );
 		int getScore( );
-		void printReport( );
+		void writeReport(ofstream &);
 
 		void insertA(char a);
 		void insertB(char b);

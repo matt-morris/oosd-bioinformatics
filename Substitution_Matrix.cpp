@@ -14,15 +14,15 @@ Substitution_Matrix::Substitution_Matrix(char orderIn[4], int matrixIn[4][4])// 
 //Substitution_Matrix::Substitution_Matrix(char c0, char c1, char c2, char c3, int i0, int i1, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9)
 {
 	// constructor
-	for (int i = 0;i < 4;i++)
+	for (int i = 0; i < 4; i++)
 	{
 		order[i] = orderIn[i];
 	}
 	//matrix = matrixIn;
 
-	for (int i = 0;i < 4;i++)
+	for (int i = 0; i < 4; i++)
 	{
-		for (int j = 0;j < 4;j++)
+		for (int j = 0; j < 4; j++)
 		{
 			matrix[i][j] = matrixIn[i][j];
 		}
@@ -32,11 +32,11 @@ Substitution_Matrix::Substitution_Matrix(char orderIn[4], int matrixIn[4][4])// 
 int Substitution_Matrix::getScore(char a, char b)
 {
 	int score = 0;
-	for (unsigned int i = 0;i < 4;i++)
+	for (unsigned int i = 0; i < 4; i++)
 	{
 		if (order[i] == a)
 		{
-			for (unsigned int j = 0;j < 4;j++)
+			for (unsigned int j = 0; j < 4; j++)
 			{
 				if (order[j] == b)
 				{
@@ -48,24 +48,24 @@ int Substitution_Matrix::getScore(char a, char b)
 	return score;
 }
 
-void Substitution_Matrix::printMatrix()
+void Substitution_Matrix::printMatrix( )
 {
 	cout << endl;
-	for (int i = 0;i < 4;i++)
+	for (int i = 0; i < 4; i++)
 	{
 		cout << "\t" << order[i];
 	}
-	for (int i = 0;i < 4;i++)
+	for (int i = 0; i < 4; i++)
 	{
 		cout << endl << order[i];
-		for (int j = 0;j < 4;j++)
+		for (int j = 0; j < 4; j++)
 		{
 			cout << "\t" << matrix[i][j];
 		}
 	}
 }
 
-Substitution_Matrix::~Substitution_Matrix()
+Substitution_Matrix::~Substitution_Matrix( )
 {
 	// clean up...
 	delete order;

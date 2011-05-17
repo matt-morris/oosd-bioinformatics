@@ -8,26 +8,28 @@
 #ifndef NEEDLEMAN_WUNSCH_H_
 #define NEEDLEMAN_WUNSCH_H_
 
-#include "Substitution_Matrix.h"
 #include "Pair.h"
-#include <vector>
-#include <string>
+#include "Sequence.h"
+#include "Substitution_Matrix.h"
+
 #include <iostream>
+#include <string>
+#include <vector>
 
 using namespace std;
 
 class Needleman_Wunsch
 {
 public:
-	Needleman_Wunsch(vector<char> *firstIn, vector<char> *secondIn, int penaltyIn, Substitution_Matrix *subIn);
+	Needleman_Wunsch(Sequence *firstIn, Sequence *secondIn, int penaltyIn, Substitution_Matrix *subIn);
 	virtual ~Needleman_Wunsch();
 
 	Pair *align();
 
 private:
 	Substitution_Matrix *sub;
-	vector<char> *first;
-	vector<char> *second;
+	string first;
+	string second;
 	int penalty;
 };
 
